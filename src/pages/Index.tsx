@@ -21,10 +21,10 @@ const Index = () => {
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-navy">
-            Random Book Selector
+            Book Buddy
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover your next great read from my personal collection of life-changing books.
+            Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
           </p>
           
           <Button
