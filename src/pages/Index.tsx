@@ -22,8 +22,19 @@ const Index = () => {
         throw error;
       }
       
-      console.log("Fetched books:", data);
-      return data;
+      // Transform the data to match our Book interface
+      const transformedBooks: Book[] = data.map(book => ({
+        id: book.id,
+        title: book.title,
+        author: book.author,
+        coverUrl: book.cover_url,
+        review: book.review,
+        keyTakeaways: book.key_takeaways,
+        affiliateLink: book.affiliate_link
+      }));
+      
+      console.log("Fetched books:", transformedBooks);
+      return transformedBooks;
     }
   });
 
