@@ -1,13 +1,31 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { books } from "@/data/books";
 import BookCard from "@/components/BookCard";
 import { Book } from "@/types/book";
 import { Shuffle } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-  console.log("Current selected book:", selectedBook?.title);
+  
+  const { data: books = [], isLoading } = useQuery({
+    queryKey: ['books'],
+    queryFn: async () => {
+      console.log("Fetching books from Supabase...");
+      const { data, error } = await supabase
+        .from('books')
+        .select('*');
+      
+      if (error) {
+        console.error("Error fetching books:", error);
+        throw error;
+      }
+      
+      console.log("Fetched books:", data);
+      return data;
+    }
+  });
 
   const getRandomBook = () => {
     const randomIndex = Math.floor(Math.random() * books.length);
@@ -15,6 +33,14 @@ const Index = () => {
     console.log("Selected new random book:", newBook.title);
     setSelectedBook(newBook);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-cream py-12 px-4 flex items-center justify-center">
+        <p className="text-lg text-muted-foreground">Loading books...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
@@ -31,6 +57,7 @@ const Index = () => {
             size="lg"
             onClick={getRandomBook}
             className="bg-navy hover:bg-navy/90 text-white"
+            disabled={books.length === 0}
           >
             <Shuffle className="mr-2 h-5 w-5" />
             Get Random Book
