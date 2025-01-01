@@ -22,6 +22,7 @@ const Index = () => {
         throw error;
       }
       
+      // Transform the data to match our Book interface
       const transformedBooks: Book[] = data.map(book => ({
         id: book.id,
         title: book.title,
@@ -53,33 +54,27 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="relative h-[50vh] bg-navy text-white flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 to-navy/90">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2428&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
-        </div>
-        
-        <div className="relative max-w-6xl mx-auto px-4 text-center space-y-8">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold">
+    <div className="min-h-screen bg-cream py-12 px-4">
+      <div className="max-w-6xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-navy">
             Book Buddy
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
           </p>
           
           <Button
             size="lg"
             onClick={getRandomBook}
-            className="bg-gold hover:bg-gold-light text-white text-lg"
+            className="bg-navy hover:bg-navy/90 text-white"
             disabled={books.length === 0}
           >
-            <Shuffle className="mr-2 h-6 w-6" />
+            <Shuffle className="mr-2 h-5 w-5" />
             Get Random Book
           </Button>
         </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
         {selectedBook && (
           <div className="mt-12">
             <BookCard book={selectedBook} />
