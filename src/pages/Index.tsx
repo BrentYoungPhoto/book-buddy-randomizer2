@@ -80,6 +80,17 @@ const Index = () => {
             <BookCard book={selectedBook} />
           </div>
         )}
+
+        <footer className="pt-8 mt-16 border-t border-gold/20">
+          <a 
+            href="https://linktr.ee/RealBrentYoung" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-navy/70 hover:text-navy transition-colors inline-flex items-center gap-1"
+          >
+            @RealBrentYoung
+          </a>
+        </footer>
       </div>
     </div>
   );
