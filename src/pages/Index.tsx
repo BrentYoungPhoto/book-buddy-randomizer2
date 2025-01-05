@@ -54,26 +54,28 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
-      <div className="max-w-6xl mx-auto space-y-4">
-        <div className="text-center space-y-2">
-          <img 
-            src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
-            alt="Book Buddy Logo"
-            className="h-80 md:h-96 mx-auto animate-fade-in"
-          />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
-          </p>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center space-y-6">
+          <div className="space-y-4">
+            <img 
+              src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
+              alt="Book Buddy Logo"
+              className="w-auto h-80 md:h-96 mx-auto animate-fade-in object-contain"
+            />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
+            </p>
           
-          <Button
-            size="lg"
-            onClick={getRandomBook}
-            className="bg-navy hover:bg-navy/90 text-white mt-2"
-            disabled={books.length === 0}
-          >
-            <Shuffle className="mr-2 h-5 w-5" />
-            Get Random Book
-          </Button>
+            <Button
+              size="lg"
+              onClick={getRandomBook}
+              className="bg-navy hover:bg-navy/90 text-white"
+              disabled={books.length === 0}
+            >
+              <Shuffle className="mr-2 h-5 w-5" />
+              Get Random Book
+            </Button>
+          </div>
         </div>
 
         {selectedBook && (
