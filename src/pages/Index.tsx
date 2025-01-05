@@ -55,8 +55,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center space-y-6">
-          <div className="space-y-4">
+        <div className="text-center">
+          <div className="space-y-2">
             <img 
               src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
               alt="Book Buddy Logo"
@@ -69,7 +69,7 @@ const Index = () => {
             <Button
               size="lg"
               onClick={getRandomBook}
-              className="bg-navy hover:bg-navy/90 text-white"
+              className="bg-navy hover:bg-navy/90 text-white mt-4"
               disabled={books.length === 0}
             >
               <Shuffle className="mr-2 h-5 w-5" />
