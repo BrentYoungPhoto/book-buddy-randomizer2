@@ -57,7 +57,7 @@ const Index = () => {
       <div className="max-w-6xl mx-auto space-y-4">
         <div className="text-center space-y-2">
           <img 
-            src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
+            src="https://media.publit.io/file/background-removed-image-HgqIrUwdQi2GjJKRGGaLTA-1.png"
             alt="Book Buddy Logo"
             className="h-80 md:h-96 mx-auto animate-fade-in"
           />
