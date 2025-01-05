@@ -22,7 +22,6 @@ const Index = () => {
         throw error;
       }
       
-      // Transform the data to match our Book interface
       const transformedBooks: Book[] = data.map(book => ({
         id: book.id,
         title: book.title,
@@ -60,11 +59,8 @@ const Index = () => {
           <img 
             src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
             alt="Book Buddy Logo"
-            className="h-32 md:h-40 mx-auto mb-4 animate-fade-in"
+            className="h-40 md:h-56 mx-auto mb-4 animate-fade-in"
           />
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-navy">
-            Book Buddy
-          </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
           </p>
