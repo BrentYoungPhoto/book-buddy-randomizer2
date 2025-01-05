@@ -60,7 +60,7 @@ const Index = () => {
           <img 
             src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
             alt="Book Buddy Logo"
-            className="h-24 mx-auto mb-4 animate-fade-in"
+            className="h-32 md:h-40 mx-auto mb-4 animate-fade-in"
           />
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-navy">
             Book Buddy
