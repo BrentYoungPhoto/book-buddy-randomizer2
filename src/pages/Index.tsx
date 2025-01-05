@@ -54,12 +54,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-cream py-12 px-4">
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-4">
+      <div className="max-w-6xl mx-auto space-y-4">
+        <div className="text-center space-y-2">
           <img 
             src="https://media.publit.io/file/background-removed-image-XNjZxbtlQnG7PUlYszHgmg.png"
             alt="Book Buddy Logo"
-            className="h-40 md:h-56 mx-auto mb-4 animate-fade-in"
+            className="h-80 md:h-96 mx-auto animate-fade-in"
           />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover life-changing books from my personal reading journey, curated with detailed reviews and key insights.
@@ -68,7 +68,7 @@ const Index = () => {
           <Button
             size="lg"
             onClick={getRandomBook}
-            className="bg-navy hover:bg-navy/90 text-white"
+            className="bg-navy hover:bg-navy/90 text-white mt-2"
             disabled={books.length === 0}
           >
             <Shuffle className="mr-2 h-5 w-5" />
@@ -77,7 +77,7 @@ const Index = () => {
         </div>
 
         {selectedBook && (
-          <div className="mt-12">
+          <div className="mt-8">
             <BookCard book={selectedBook} />
           </div>
         )}
